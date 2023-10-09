@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Básico</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Unidad 1 - SVG Básico</h2>
+
+    <h3>¿Qué es SVG?</h3>
+    <p>
+      SVG, que significa Scalable Vector Graphics (Gráficos Vectoriales
+      Escalables), es un tipo de archivo para imágenes en la computadora. A
+      diferencia de las fotos normales que pueden perder calidad al agrandarse,
+      las imágenes SVG se hacen con matemáticas, por lo que se pueden agrandar
+      sin perder calidad. Estas imágenes son muy útiles en sitios web y diseño
+      gráfico porque se ven bien en cualquier tamaño y se pueden animar
+      fácilmente. También son fáciles de editar con programas como Adobe
+      Illustrator. En resumen, SVG es un formato de imagen que se ve bien en
+      cualquier tamaño y es perfecto para la web y el diseño gráfico.
+    </p>
+
+    <p>
+      Si solo agregamos la etiqueta svg, tendra por defecto altura y anchura por
+      defecto del navegador
+    </p>
+    <p class="code">&lt;svg&gt;&lt;/svg&gt;</p>
+
+    <svg></svg>
+
+    <p>
+      Pero tambien podemos agregarle altura y anchura agregandole width="" y
+      height="" como atributos
+    </p>
+    <p class="code">&lt;svg width="600" height="200"&gt;&lt;/svg&gt;</p>
+
+    <svg width="600" height="200"></svg>
+
+    <h4>Rectángulo</h4>
+
+    <p>
+      Utilizaremos la etiqueta <span class="code">&lt;rect&gt;</span> la cual la
+      podremos posicionar con los atributos
+      <span class="code"> x="" y=""</span> Ya que SVG seria como un plano
+      cartesiano. por defecto el color del rectangulo es de color negro, peor lo
+      podemos cambiar con la propiedad <span class="code">fill=""</span>
+      que indica el relleno de la figura, en SVG no se utiliza background color
+    </p>
+    <p class="code">
+      &lt;svg width="600" height="400"&gt;<br />
+      &nbsp;&nbsp;&lt;rect x="100" y="50" width="200" height="100"
+      fill="lightgreen"/&gt;<br />
+      &lt;/svg&gt;
+    </p>
+
+    <svg width="300" height="200">
+      <rect x="100" y="50" width="100" height="50" fill="lightgreen" />
+    </svg>
+
+    <h4>Posicionamiento</h4>
+    <p>
+      Si queremos agregar mas elementos, se deberan de agregar hacia abajo, con
+      lo cual no existe z-index, ya que cada elemento sera una capa nueva, por
+      lo que si en algún momento hay una capa en el mismo lugar que otra se vera
+      la ultima que se ha agregado y no la de anterior
+    </p>
+
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;rect x="50" y="60" width="100" height="50"
+      fill="lightgreen" /&gt;<br />
+      &nbsp;&nbsp;&lt;rect x="75" y="80" width="100" height="50"
+      fill="lightblue" /&gt;<br />
+      &nbsp;&nbsp;&lt;rect x="100" y="100" width="100" height="50"
+      fill="lightpink" /&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <rect x="50" y="60" width="100" height="50" fill="lightgreen" />
+      <rect x="75" y="80" width="100" height="50" fill="lightblue" />
+      <rect x="100" y="100" width="100" height="50" fill="lightpink" />
+    </svg>
+
+    <h4>Círculo</h4>
+    <p>
+      Los atributos cx y cy indican las coordenadas del centro del círculo. El
+      atributo r indica el radio del círculo.
+    </p>
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;circle cx="150" cy="100" r="50" fill="lightgreen"/&gt;<br />
+      &nbsp;&nbsp;&lt;circle cx="150" cy="100" r="25" fill="lightblue"/&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <circle cx="150" cy="100" r="50" fill="lightgreen" />
+      <circle cx="150" cy="100" r="25" fill="lightblue" />
+    </svg>
+
+    <h4>Elipse</h4>
+    <p>
+      La etiueta es muy parecida a la del círculo, solo que aquí se debera de
+      definir un radio para el eje X (rx) y otro para el eje Y (ry).
+    </p>
+    <p class="code">
+        &lt;svg width="300" height="200"&gt;<br />
+        &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="40" ry="70" fill="lightgreen" /&gt;<br />
+        &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="70" ry="40" fill="lightblue" /&gt;<br />
+          &lt;/svg&gt;
+    </p>
+
+    <svg width="300" height="200">
+      <ellipse cx="150" cy="100" rx="40" ry="70" fill="lightgreen" />
+      <ellipse cx="150" cy="100" rx="70" ry="40" fill="lightblue" />
+    </svg>
+  </body>
+</html>
