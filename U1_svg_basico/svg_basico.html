@@ -105,15 +105,59 @@
       definir un radio para el eje X (rx) y otro para el eje Y (ry).
     </p>
     <p class="code">
-        &lt;svg width="300" height="200"&gt;<br />
-        &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="40" ry="70" fill="lightgreen" /&gt;<br />
-        &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="70" ry="40" fill="lightblue" /&gt;<br />
-          &lt;/svg&gt;
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="40" ry="70"
+      fill="lightgreen" /&gt;<br />
+      &nbsp;&nbsp;&lt;ellipse cx="150" cy="100" rx="70" ry="40" fill="lightblue"
+      /&gt;<br />
+      &lt;/svg&gt;
     </p>
 
     <svg width="300" height="200">
       <ellipse cx="150" cy="100" rx="40" ry="70" fill="lightgreen" />
       <ellipse cx="150" cy="100" rx="70" ry="40" fill="lightblue" />
     </svg>
+
+    <h4>Agregar una Imágen</h4>
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;image<br />
+      &nbsp;&nbsp;&nbsp;xlink:href="https://media.istockphoto.com/id/1341818129/es/foto/lindo-y-dulce-perro-cocker-spaniel-con-la-lengua-sobresaliendo-sentado-aislado-sobre-fondo.jpg?s=612x612&w=0&k=20&c=mc95Nxj7dYuRJnU9iFbXRjs7mM6aHtJ0h4Bdr5kATPQ="<br />
+      &nbsp;&nbsp;&nbsp;x="20"<br />
+      &nbsp;&nbsp;&nbsp;y="0"<br />
+      &nbsp;&nbsp;&nbsp;height="100"<br />
+      &nbsp;&nbsp;&nbsp;width="130"<br />
+      &nbsp;&nbsp;/&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <image
+        xlink:href="https://media.istockphoto.com/id/1341818129/es/foto/lindo-y-dulce-perro-cocker-spaniel-con-la-lengua-sobresaliendo-sentado-aislado-sobre-fondo.jpg?s=612x612&w=0&k=20&c=mc95Nxj7dYuRJnU9iFbXRjs7mM6aHtJ0h4Bdr5kATPQ="
+        x="20"
+        y="0"
+        height="100"
+        width="130"
+      />
+    </svg>
+
+    <h3>Estilos en SVG</h3>
+    <p>
+      A los SVG, le podemos dar estilos a traves de atributos, pero tambien con
+      css
+    </p>
+
+    <ul>
+      <li>fill-> Relleno de color de una figura. En CSS es fill:</li>
+      <li>fill-opacity-> Transparencia del color de relleno.</li>
+      <li>stroke-> Color del borde de una figura.</li>
+      <li>
+        stroke-width-> Ancho del borde(por defecto es 1).
+      </li>
+      <li>
+        stroke-linejoin-> Forma en la acaba una línea conectar con otra en un
+        borde. Por defecto es miter (recta), pero puede ser round (redonda) o
+        bevel (biselada).
+      </li>
+    </ul>
   </body>
 </html>
