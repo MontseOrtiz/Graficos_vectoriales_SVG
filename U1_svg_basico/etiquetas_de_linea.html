@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiquetas de línea, polilínea y polígono</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Etiquetas de línea, polilínea y polígono</h2>
+    <h4>Línea</h4>
+    <p>
+      Se utiliza para dibujar una línea, especificando dónde comienza la línea
+      (usando los atributos x1 e y1) y dónde termina (con los atributos x2 e
+      y2). Además, puedes controlar el color de la línea con el atributo stroke
+      y su grosor con el atributo stroke-width.
+    </p>
+    <p>
+      Por defecto las lineas tienen un stroke-linecap="butt"(cuando llega al
+      nodo se corta en seco), es como terminara nuestra linea dependera de la
+      opcion elegida
+    </p>
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;line x1="50" y1="10" x2="250" y2="10"stroke="lightgreen"
+      stroke-width="10" stroke-linecap="round" /&gt;<br />
+      &nbsp;&nbsp;&lt;line x1="50" y1="25" x2="250" y2="25"stroke="lightgreen"
+      stroke-width="10" stroke-linecap="butt" /&gt;<br />
+      &nbsp;&nbsp;&lt;line x1="50" y1="40" x2="250" y2="40"stroke="lightgreen"
+      stroke-width="10" stroke-linecap="square" /&gt;<br />
+      &nbsp;&nbsp;&lt;line x1="50" y1="55" x2="250" y2="55"stroke="lightgreen"
+      stroke-width="10" /&gt;<br />
+      &nbsp;&nbsp;&lt;line x1="50" y1="60" x2="250" y2="150" stroke="lightblue"
+      stroke- width="2" /&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <line
+        x1="50"
+        y1="0"
+        x2="50"
+        y2="200"
+        stroke="pink"
+        stroke-width="1"
+        stroke-linecap="round"
+      />
+      <line
+        x1="250"
+        y1="0"
+        x2="250"
+        y2="200"
+        stroke="pink"
+        stroke-width="1"
+        stroke-linecap="round"
+      />
+      <line
+        x1="50"
+        y1="10"
+        x2="250"
+        y2="10"
+        stroke="lightgreen"
+        stroke-width="10"
+        stroke-linecap="round"
+      />
+      <line
+        x1="50"
+        y1="25"
+        x2="250"
+        y2="25"
+        stroke="lightgreen"
+        stroke-width="10"
+        stroke-linecap="butt"
+      />
+      <line
+        x1="50"
+        y1="40"
+        x2="250"
+        y2="40"
+        stroke="lightgreen"
+        stroke-width="10"
+        stroke-linecap="square"
+      />
+      <line
+        x1="50"
+        y1="55"
+        x2="250"
+        y2="55"
+        stroke="lightgreen"
+        stroke-width="10"
+      />
+      <line
+        x1="50"
+        y1="70"
+        x2="250"
+        y2="150"
+        stroke="lightblue"
+        stroke-
+        width="2"
+      />
+    </svg>
+    <h4>Polilínea</h4>
+    <p>
+      La etiqueta que permite crear una línea compuesta por varios puntos. Cada
+      punto de la línea se especifica mediante el atributo "points", que
+      contiene las coordenadas x e y separadas por comas, y cada punto de la
+      polilínea está separado por espacios. Esta etiqueta permite trazar líneas
+      complejas en un gráfico al definir múltiples puntos con precisión.
+    </p>
+    <p>
+      Una polilinea por defecto tiene relleno, por lo que en la propiedad fill,
+      podremos poner none o transparent
+    </p>
+
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;polyline points="0,100 40,100 60,50 80,100, 120,100
+      140,150 160,100 200,100 220,50 240,100 280,100 300,150" fill="transparent"
+      stroke="pink" stroke-width="3"/&gt;<br />
+      &nbsp;&nbsp;&lt;polyline points="0,150 40,150 60,125 80,150, 120,150
+      140,175 160,150 200,150 220,125 240,150 280,150 300,175"
+      stroke="lightgreen" stroke-width="3"/&gt;<br />
+      &nbsp;&nbsp;&lt;polyline points="140,100 160,100 160,120 140,120 140,100 "
+      stroke="lightblue" stroke-width="3"/&gt;<br />
+      &lt;/svg&gt;
+    </p>
+
+    <svg width="300" height="200">
+      <polyline
+        points="0,50 40,50 60,25 80,50, 120,50 140,75 160,50 200,50 220,25 240,50 280,50 300,75"
+        fill="transparent"
+        stroke="pink"
+        stroke-width="3"
+      />
+      <polyline
+        points="0,150 40,150 60,125 80,150, 120,150 140,175 160,150 200,150 220,125 240,150 280,150 300,175"
+        stroke="lightgreen"
+        stroke-width="3"
+      />
+      <polyline
+        points="140,100 160,100 160,120 140,120 140,100 "
+        stroke="lightblue"
+        stroke-width="3"
+      />
+    </svg>
+
+
+
+    <h4>Poligono</h4>
+    <p>
+      Una etiqueta para crear polígonos que tiene un funcionamiento similar a
+      polyline, pero con la particularidad de que el último punto se conecta
+      automáticamente con el primero, cerrando así el dibujo.
+    </p>
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+      &nbsp;&nbsp;&lt;polygon points="0,100 40,100 60,50 80,100, 120,100
+      140,150 160,100 200,100 220,50 240,100 280,100 300,150" fill="transparent"
+      stroke="pink" stroke-width="3"/&gt;<br />
+      &nbsp;&nbsp;&lt;polygon points="0,150 40,150 60,125 80,150, 120,150
+      140,175 160,150 200,150 220,125 240,150 280,150 300,175"
+      stroke="lightgreen" stroke-width="3"/&gt;<br />
+      &nbsp;&nbsp;&lt;polygon points="140,100 160,100 160,120 140,120"
+      stroke="lightblue" stroke-width="3"/&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <polygon
+        points="0,50 40,50 60,25 80,50, 120,50 140,75 160,50 200,50 220,25 240,50 280,50 300,75"
+        fill="transparent"
+        stroke="pink"
+        stroke-width="3"
+      />
+      <polygon
+        points="0,150 40,150 60,125 80,150, 120,150 140,175 160,150 200,150 220,125 240,150 280,150 300,175"
+        stroke="lightgreen"
+        stroke-width="3"
+      />
+      <polygon
+        points="140,100 180,100 180,120  140,120"
+        stroke="lightblue"
+        stroke-width="3"
+      />
+    </svg>
+
+  </body>
+</html>
