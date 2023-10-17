@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiqueta de trazo (path)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Etiqueta de trazo (path)</h2>
+    <p> La etiqueta "path" se utiliza para definir un camino. Un camino puede ser una línea recta, una curva, una forma compleja, o incluso el contorno de un objeto.</p>
+    <h3>Atributos de movimiento más comunes:</h3>
+    <p><strong>d (data):</strong> Este atributo define los comandos del camino. Es una cadena de texto que especifica los movimientos y las curvas del camino.</p>
+    <p><strong>M (moveto):</strong> Este comando se utiliza para mover el lápiz (o punto de inicio) a una posición específica sin dibujar nada. Por ejemplo, <code>M x y</code> moverá el lápiz a las coordenadas (<em>x, y</em>).</p>
+    <p><strong>Z (closepath):</strong> Este comando cierra el camino actual volviendo al punto de inicio del camino, creando una forma cerrada. No requiere argumentos.</p>
+    <p><strong>H:</strong> Dibuja una línea horizontal desde la posición actual del lápiz hasta un valor de coordenada <em>x</em> específico. Por ejemplo, <code>H x</code> dibujará una línea horizontal hasta la coordenada <em>x</em>.</p>
+    <p><strong>L (lineto):</strong> Este comando dibuja una línea recta desde la posición actual del lápiz hasta un punto específico. Por ejemplo, <code>L x y</code> dibujará una línea recta hasta las coordenadas (<em>x, y</em>).</p>
+    <p><strong>Q (curva cuadrática Bézier):</strong> La Q indica una curva cuadrática Bézier desde el punto en el que estaba el dibujo, modificándose por el "manejador" indicado por las coordenadas <code>(x1, y1)</code>, y finalizando en las coordenadas <code>(x, y)</code>. El "manejador" (<em>x1, y1</em>) actúa como un punto de control que define la dirección y longitud de la curva, creando un tramo suave entre el punto de partida y el punto final del dibujo.</p>
+    <p><strong>V:</strong> Dibuja una línea vertical desde la posición actual del lápiz hasta un valor de coordenada <em>y</em> específico. Por ejemplo, <code>V y</code> dibujará una línea vertical hasta la coordenada <em>y</em>.</p>
+    <p>Puedes encontrar una descripción detallada del funcionamiento de path en <a href="https://developer.mozilla.org/en/docs/Web/SVG/Tutorial/Paths" target="_blank" rel="noopener noreferrer">https:// developer.mozilla.org/en/docs/Web/SVG/Tutorial/Paths</a></p>
+
+    <h3>Ejemplo de cuadrado</h3>
+    <p class="code">
+      &lt;svg width="300" height="200"&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M0   0   H 50  V 50  H 0   Z" fill="lightblue" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M125 0   H 175 V 50  H 125 Z" fill="lightgreen" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M250 0   H 300 V 50  H 250 Z" fill="lightblue" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M250 75  H 300 V 120 H 250 Z" fill="lightgreen" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M250 150 H 300 V 200 H 250 Z" fill="lightblue" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M125 150 H 175 V 200 H 125 Z" fill="lightgreen" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M0   150 H 50  V 200 H 0   Z" fill="lightblue" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M0   75  H 50  V 120 H 0   Z" fill="lightgreen" /&gt;<br />
+        &nbsp;&nbsp;&lt;path d="M125 75  H 175 V 120 H 125 Z" fill="pink" /&gt;<br />
+      &lt;/svg&gt;
+    </p>
+    <svg width="300" height="200">
+      <path d="M0 0 H 50  V 50 H 0  Z" fill="lightblue" />
+      <path d="M125 0 H 175 V 50 H 125  Z" fill="lightgreen" />
+      <path d="M250 0 H 300  V 50 H 250  Z" fill="lightblue" />
+      <path d="M250 75 H 300 V 120 H 250  Z" fill="lightgreen" />
+      <path d="M250 150 H 300  V 200 H 250  Z" fill="lightblue" />
+      <path d="M125 150 H 175 V 200 H 125  Z" fill="lightgreen" />
+      <path d="M0 150 H 50  V 200 H 0  Z" fill="lightblue" />
+      <path d="M0 75 H 50 V 120 H 0  Z" fill="lightgreen" />
+      <path d="M125 75 H 175 V 120 H 125  Z" fill="pink" />
+    </svg>
+    
+  </body>
+</html>
